@@ -18,7 +18,10 @@ export default function RemoveBtn({ id }) {
   }
 
   return (
-    <button onClick={removeTopic} className="text-red-400">
+    <button
+      onClick={removeTopic}
+      className="text-red-400 hover:animate-bounce active:text-red-700"
+    >
       <HiOutlineTrash size={24} />
     </button>
   )

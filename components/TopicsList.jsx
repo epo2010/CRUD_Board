@@ -17,7 +17,7 @@ const getTopics = async () => {
   }
 }
 
-export default async function TopicList() {
+export default async function TopicsList() {
   const { topics } = await getTopics()
 
   return (
@@ -25,20 +25,23 @@ export default async function TopicList() {
       {topics.map((topic) => (
         <div
           key={topic._id}
-          className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start rounded-md hover:bg-slate-100"
+          className="p-4 border border-slate-300 hover:bg-slate-100 my-3 flex justify-between gap-5 items-start rounded-md hover:shadow-inner shadow-lg transition ease-in-out"
         >
           <div>
-            <h2 className="text-2xl font-bold">{topic.title}</h2>
+            <h2 className="text-2xl font-bold underline decoration-sky-500">
+              {topic.title}
+            </h2>
             <div>{topic.description}</div>
             <div className="flex gap-4">
               <p>Created: {topic.createdAt}</p>
               <p>Updated: {topic.updatedAt}</p>
             </div>
           </div>
+
           <div className="flex gap-2">
             <RemoveBtn id={topic._id} />
             <Link href={`/editTopic/${topic._id}`}>
-              <HiPencilAlt size={24} />
+              <HiPencilAlt size={24} className="hover:animate-bounce" />
             </Link>
           </div>
         </div>
