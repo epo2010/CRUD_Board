@@ -47,7 +47,7 @@ export default function EditTopicForm({ id, title, description }) {
       />
       <button
         type="submit"
-        className="bg-green-400 hover:bg-green-300 text-white font-bold px-6 py-3 w-fit rounded-md shadow-lg transition ease-in-ou"
+        className="bg-green-400 hover:bg-green-300 text-white font-bold px-6 py-3 w-fit rounded-md shadow-lg transition ease-in-out"
       >
         Update Topic
       </button>
